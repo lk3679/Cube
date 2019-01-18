@@ -7,11 +7,19 @@ class Account extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('account_model');
-		$data=$this->account_model->GetAccountList();
-		echo "<pre>";
-		var_dump($data);
-		die;
-		$this->load->view('account_index');
+		$AccountList=$this->account_model->GetAccountList();
+		$data= array('AccountList' =>$AccountList );
+		$this->load->view('account_index',$data);
+
+	}
+
+	public function Create(){
+		$this->load->view('account_create');
+
+	}
+
+	public function Edit(){
+		$this->load->view('account_edit');
 
 	}
 

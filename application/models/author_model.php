@@ -1,6 +1,6 @@
 <?php
 
-class word_model extends CI_Model {
+class author_model extends CI_Model {
 
 	function __construct()
     {
@@ -10,9 +10,9 @@ class word_model extends CI_Model {
 		$this->load->database(); 
     }
     
-    function get_words()
+    function GetAuthorList()
     {
-		$query = $this->db->query("select * from words order by start_word");
+		$query = $this->db->get('authors');       
 		return $query->result_array();
     }
 
